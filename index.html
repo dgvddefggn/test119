@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h3>登录 信息</h3>
+        <div>
+           <span>密码(6-20位以字母开头只能包含字母、数字、下划线)
+            <label style="color:red;">*</label> 
+            <font id="passwordMSG"></font>
+        </span>
+        <input type="password" name="password" id="password" maxlength="20" required onblur="checkPwd(this.value)">
+    </div>
+        <div>
+           <span>重复密码
+            <label style="color:red;">*</label> 
+            <font id="mm2MSG"></font>
+        </span>
+           <input form="other" type="password" id="mm2" maxlength="20" required oninput="checkPwd2(this.value)">
+    </div>
+        <div class="clear"></div>
+        <a class="news-letter" href="#">
+           <label class="checkbox">
+             <input type="checkbox" onclick="checkit(this.checked)"><i></i>显示密码
+        </label>
+    </a>
+</body>
+<script>
+/*显示密码*/
+function checkit(isChecked) {
+    if (isChecked) {
+        $("#password").prop("type", 'text');
+        $("#mm2").prop("type", 'text');
+    } else {
+        $("#password").prop("type", 'password');
+        $("#mm2").prop("type", 'password');
+    }
+}
+
+</script>
+
+</html>
